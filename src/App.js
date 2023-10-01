@@ -13,7 +13,6 @@ function App() {
   const handleClick = () => {
 
     const getResources = async () => {
-      // console.log("click");
       const resourceData = await getDocs(resourceCollectionRef);
       // console.log(resourceData.docs)
       setResources(resourceData.docs.map((doc) => ({ ...doc.data()})))
@@ -28,27 +27,24 @@ function App() {
     <div className="App">
       <Button onClick = {handleClick}></Button>
 
-      {
-        <table>
-              <tr>
-                  <th>Category</th>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Zipcode</th>
-              </tr>
-              {resources.map((val, key) => {
-                  return (
-                      <tr key={key}>
-                          <td>{val.Category}</td>
-                          <td>{val.name}</td>
-                          <td>{val.phone}</td>
-                          <td>{val.zipCode}</td>
-                      </tr>
-                  )
-              })}
-          </table>
-      }
-        
+      <table>
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Zipcode</th>
+        </tr>
+        {resources.map((val, key) => {
+            return (
+                <tr key={key}>
+                    <td>{val.Category}</td>
+                    <td>{val.name}</td>
+                    <td>{val.phone}</td>
+                    <td>{val.zipCode}</td>
+                </tr>
+            )
+        })}
+      </table>
       
     </div>
   );
