@@ -29,27 +29,24 @@ function App() {
       <Button onClick = {handleClick}></Button>
 
       {
-        resources.map((resource) => {
-          return <table>
-                <tr>
-                    <th>Category</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Zipcode</th>
-                </tr>
-                {resources.map((val, key) => {
-                    return (
-                        <tr key={key}>
-                            <td>{val.Category}</td>
-                            <td>{val.name}</td>
-                            <td>{val.phone}</td>
-                            <td>{val.zipCode}</td>
-                        </tr>
-                    )
-                })}
-            </table>
-
-        })
+        <table>
+              <tr>
+                  <th>Category</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Zipcode</th>
+              </tr>
+              {resources.map((val, key) => {
+                  return (
+                      <tr key={key}>
+                          <td>{val.Category}</td>
+                          <td>{val.name}</td>
+                          <td>{val.phone}</td>
+                          <td>{val.zipCode}</td>
+                      </tr>
+                  )
+              })}
+          </table>
       }
         
       
